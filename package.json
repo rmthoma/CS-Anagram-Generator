@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-deploy-ghpages": "ng build --configuration production --aot --base-href 'https://rmthoma.github.io/CS-Anagram-Generator' && npx ngh --dir dist/CS-Anagram-Generator",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
