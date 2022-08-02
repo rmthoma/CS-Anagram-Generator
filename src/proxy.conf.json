@@ -1,0 +1,8 @@
+{
+    "/cs": {
+        "target": "https://www.jjgaming.net/",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
