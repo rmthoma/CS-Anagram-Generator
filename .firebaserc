@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cs-anagram-generator": {
+      "hosting": {
+        "cs-anagram-generator": [
+          "cs-anagram-generator"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cs-anagram-generator"
+  }
+}

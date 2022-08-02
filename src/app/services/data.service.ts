@@ -8,9 +8,6 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
   
-  /*
-  
-  */
   getGeneratedWords() {
     return this.http.get<any>('cs/fetchwords.php');
   }

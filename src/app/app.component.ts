@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   generateNewWords() {
     this.dataService.getGeneratedWords().subscribe(res => {
       if(res) {
+        console.log(res);
           this.firstWord = res[0];
           this.secondWord = res[1];
       }
