@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 //Angular Material
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
+    MatButtonModule,
     FormsModule
   ],
   providers: [],

@@ -8,10 +8,8 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   firstWord: string = "";
-  firstWordSearchResult: any;
   firstWordImage: string = "";
   secondWord: string = "";
-  secondWordSearchResult: any;
   secondWordImage: string = "";
   searchImages: boolean;
   errorMessage: string;

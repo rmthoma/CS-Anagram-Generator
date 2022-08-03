@@ -1,37 +1,67 @@
-.header-content {
+.background {
+    background-image: url("../assets/background.jpg");
+    filter: blur(4px);
     width: 100%;
-    text-align: center;
-    margin-top: 24px;
+    height: 100%;
+    background-size: 100% 100%;
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    transform: scale(1.1);
 }
 
-.title {
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-}
+.content {
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    right: 0;
 
-.chosen-words {
-    margin-top: 24px;
-    display: inline-block;
-    font-size: 24px;
-}
-
-.randomise-button {
-    margin: 12px;
-    display: inline-block;
-}
-
-.images {
-    width: 100%;
-    height: 400px;
-    display: inline-block;
-    text-align: center;
+    .header-content {
+        width: 100%;
+        text-align: center;
+        margin-top: 24px;
+    }
     
-}
-
-.word-image {
-    width: 350px;
-    height: 350px;
-    margin: 24px;
-    display: inline-block;
+    .title {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+    
+        @media screen and (max-width: 675px) {
+            font-size: 24px;
+        }
+    }
+    
+    .chosen-words {
+        margin-top: 24px;
+        display: inline-block;
+        font-size: 24px;
+    }
+    
+    .randomise-button {
+        margin: 12px;
+        display: inline-block;
+    }
+    
+    .images-container {
+        width: 100%;
+        height: 400px;
+        display: inline-block;
+        text-align: center;
+        
+    }
+    
+    .word-image {
+        width: 350px;
+        height: 350px;
+        margin: 12px;
+        display: inline-block;
+    
+        @media screen and (max-width: 675px) {
+            width: 200px;
+            height: 200px;
+        }
+    }
 }

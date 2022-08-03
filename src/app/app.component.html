@@ -1,20 +1,19 @@
-<div class="header-content">
-  <span class="title">CS Invite Text Randomiser</span>
-  <br>
-  <div class="chosen-words">
-    <span>{{firstWord}} </span><span>{{secondWord}}</span>
+<div class="background"></div>
+<div class="content">
+  <div class="header-content">
+    <span class="title">CS Invite Text Randomiser</span>
+    <br>
+    <div class="chosen-words">
+      <span>{{firstWord}} </span><span>{{secondWord}}?</span>
+    </div>
+    <br>
+    <button class="randomise-button" mat-raised-button (click)="generateNewWords()">Randomise</button>
+    <br>
+    <mat-checkbox class="search-images" [(ngModel)]="searchImages">Display Images</mat-checkbox>
   </div>
-  <br>
-  <button class="randomise-button" (click)="generateNewWords()">Randomise</button>
-  <br>
-  <mat-checkbox class="search-images" [(ngModel)]="searchImages">Display Images</mat-checkbox>
+  <div class="images-container">
+      <img class="word-image" src={{firstWordImage}} *ngIf="firstWordImage">
+      <img class="word-image" src={{secondWordImage}} *ngIf="secondWordImage">
+  </div>
+  <span class="error-message" *ngIf="errorMessage">{{errorMessage}}</span>
 </div>
-<div class="images">
-  <div class="word-image">
-    <img src={{firstWordImage}} height="350px" width="350px" *ngIf="firstWordImage">
-  </div>
-  <div class="word-image">
-    <img src={{secondWordImage}} height="350px" width="350px" *ngIf="secondWordImage">
-  </div>
-</div>
-<span class="error-message" *ngIf="errorMessage">{{errorMessage}}</span>
