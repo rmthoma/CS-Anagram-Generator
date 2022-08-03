@@ -1,6 +1,7 @@
 .header-content {
     width: 100%;
     text-align: center;
+    margin-top: 24px;
 }
 
 .title {
@@ -17,5 +18,20 @@
 
 .randomise-button {
     margin: 12px;
+    display: inline-block;
+}
+
+.images {
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.word-image {
+    width: 350px;
+    height: 350px;
+    margin: 24px;
     display: inline-block;
 }

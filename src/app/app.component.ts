@@ -8,7 +8,13 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   firstWord: string = "";
+  firstWordSearchResult: any;
+  firstWordImage: string = "";
   secondWord: string = "";
+  secondWordSearchResult: any;
+  secondWordImage: string = "";
+  searchImages: boolean;
+  errorMessage: string;
   
   constructor(private dataService: DataService) {}
 
@@ -17,12 +23,35 @@ export class AppComponent implements OnInit {
   }
   
   generateNewWords() {
+    this.errorMessage = "";
     this.dataService.getGeneratedWords().subscribe(res => {
       if(res) {
-        console.log(res);
           this.firstWord = res[0];
           this.secondWord = res[1];
+
+          if(this.searchImages) {
+            this.dataService.getImageFromGeneratedWord(this.firstWord).subscribe(res => {
+              if(res) {
+                if(res.items[0].pagemap.cse_image[0].src)
+                  this.firstWordImage = res.items[0].pagemap.cse_image[0].src;
+              }
+            }, err => {
+              console.log("Error searching image", err)
+              this.errorMessage = "Error searching image. It happens sometimes and I haven't fixed it yet."
+            })
+
+            this.dataService.getImageFromGeneratedWord(this.secondWord).subscribe(res => {
+              if(res) {
+                if(res.items[0].pagemap.cse_image[0].src)
+                  this.secondWordImage = res.items[0].pagemap.cse_image[0].src;
+              }
+            }, err => {
+              console.log("Error searching image", err)
+              this.errorMessage = "Error searching image. It happens sometimes and I haven't fixed it yet."
+            })
+          }
       }
     })
+    
   }
 }

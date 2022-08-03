@@ -6,4 +6,15 @@
   </div>
   <br>
   <button class="randomise-button" (click)="generateNewWords()">Randomise</button>
+  <br>
+  <mat-checkbox class="search-images" [(ngModel)]="searchImages">Display Images</mat-checkbox>
 </div>
+<div class="images">
+  <div class="word-image">
+    <img src={{firstWordImage}} height="350px" width="350px" *ngIf="firstWordImage">
+  </div>
+  <div class="word-image">
+    <img src={{secondWordImage}} height="350px" width="350px" *ngIf="secondWordImage">
+  </div>
+</div>
+<span class="error-message" *ngIf="errorMessage">{{errorMessage}}</span>
