@@ -7,7 +7,7 @@
       <span>{{firstWord}} </span><span>{{secondWord}}?</span>
     </div>
     <br>
-    <button class="randomise-button" mat-raised-button (click)="generateNewWords()">Randomise</button>
+    <button class="randomise-button" mat-raised-button (mouseup)="generateNewWords()" disabled={{!randomiseButtonEnabled}}>Randomise</button>
     <br>
     <mat-checkbox class="search-images" [(ngModel)]="searchImages">Display Images</mat-checkbox>
   </div>

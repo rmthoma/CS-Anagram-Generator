@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   secondWordImage: string = "";
   searchImages: boolean;
   errorMessage: string;
+  randomiseButtonEnabled: boolean = true;
   
   constructor(private dataService: DataService) {}
 
@@ -21,9 +22,11 @@ export class AppComponent implements OnInit {
   }
   
   generateNewWords() {
+    this.randomiseButtonEnabled = false;
     this.errorMessage = "";
     this.dataService.getGeneratedWords().subscribe(res => {
       if(res) {
+          this.randomiseButtonEnabled = true;
           this.firstWord = res[0];
           this.secondWord = res[1];
 
@@ -49,7 +52,9 @@ export class AppComponent implements OnInit {
             })
           }
       }
-    })
-    
+    }, err => {
+      this.randomiseButtonEnabled = true;
+      console.log(err);
+    });
   }
 }
